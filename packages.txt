@@ -1,0 +1,5 @@
+wl-clipboard
+hyprpaper
+nwg-look
+dunst
+hyprshot
