@@ -43,7 +43,7 @@
         // "all-outputs": true,
         // "warp-on-scroll": false,
         "expand": true,
-        "format": "",
+        "format": "{icon}",
         "format-icons": {
             // "1": ,
             // "2": "",
@@ -51,10 +51,10 @@
             // "4": "",
             // "5": "",
 	    "empty": "",
-            "urgent": "",
-            "focused": "",
-            "default": "",
-	    "active": ""
+        "urgent": "",
+        "focused": "",
+        "default": "",
+	    "active": ""
         }
     },
     // "keyboard-state": {

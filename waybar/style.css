@@ -41,11 +41,11 @@ window#waybar.chromium {
 }
 
 button {
-    border: 2px solid ;
+    border: 2px solid #ffffff;
     background-color: transparent;
     margin-left: 2px;
     margin-right: 2px;
-    transition: all 0.5s ease;
+    transition: all 0.479s ease;
 }
 
 button label {
@@ -68,8 +68,8 @@ button:not(.active) {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background-color: rgba(34,40,49,1);
-    box-shadow: inset 0 -2px rgba(223, 208, 184, 1);
+    background-color: rgba(34,34,34,1);
+    box-shadow: inset 0 -2px #ffffff; 
     opacity: 1;
 }
 
