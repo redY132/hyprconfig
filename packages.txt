@@ -3,3 +3,4 @@ hyprpaper
 nwg-look
 dunst
 hyprshot
+oh-my-zsh (and plugins)
