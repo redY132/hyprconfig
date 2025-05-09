@@ -1,40 +1,29 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
-    "margin-bottom": 0,
+    // "margin-top": 5,
+    // "margin-left": 5,
+    // "margin-right": 5,
+    // "margin-bottom": 0,
 
     "expand-center": true,
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 16, // Waybar height (to be removed for auto height)
+    "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-right": [
-        "custom/media",
-        "tray",
-        "network",
-        "clock"
+        "group/rightmodules"
     ],
     "modules-center": [
         "hyprland/workspaces",
         "hyprland/submap"
     ],
     "modules-left": [
-        "mpd",
-        // "idle_inhibitor",
-        "pulseaudio",
-        // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        // "keyboard-state",
-        // "sway/language",
-        "battery"
+        "group/leftmodules",
+        "group/traygroup"
+        // "tray"
         // "custom/power"
     ],
     // Modules configuration
@@ -181,7 +170,7 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "  {volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -193,7 +182,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
     // "custom/media": {
     //     "format": "{icon} {text}",
     //     "return-type": "json",
@@ -218,4 +207,44 @@
 		// 	"hibernate": "systemctl hibernate"
 		// }
 		//   }
+    "group/leftmodules": {
+        "orientation": "horizontal",
+        "modules": [
+            "mpd",
+            "pulseaudio",
+            "power-profiles-daemon",
+            "cpu",
+            "memory",
+            "temperature",
+            "backlight",
+            "battery"
+        ]
+    },
+    "group/rightmodules": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/media",
+            "network",
+            "clock"
+        ]
+    },
+    "custom/traywrap": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "♛"
+        },
+        "tooltip": false
+    },
+    "group/traygroup": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": "tray-child",
+            "transition-duration": 700,
+            "transition-left-to-right": true,
+        },
+        "modules": [
+            "custom/traywrap",
+            "tray"
+        ]
+    }
 }

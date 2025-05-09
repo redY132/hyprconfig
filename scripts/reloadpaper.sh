@@ -8,7 +8,7 @@ hyprctl hyprpaper wallpaper eDP-1,$WALLPAPER
 hyprctl hyprpaper wallpaper DP-2,$WALLPAPER 
 
 while true; do
-    sleep 360
+    sleep 1800
 	# WALLPAPER_DIR="/home/redley/.config/hypr/wallpapers/"
 	CURRENTWALL=$(hyprctl hyprpaper listloaded)
 

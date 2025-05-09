@@ -10,6 +10,8 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# Path to binaries
+export PATH="$HOME/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -87,29 +89,37 @@ bindkey '^ ' forward-word
 bindkey '^e' end-of-line
 
 # Fix autosuggestion style in vi insert mode (fix suggestions not being transparent)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#ffffff'
 
 # Load color support and fix vi mode prompt edge cases
-# autoload -U colors && colors
+autoload -U colors && colors
 # ZLE_RPROMPT_INDENT = 0
 
 # oh-my-zsh
 plugins=(
     git
-    zsh-autosuggestions
     extract
+    zsh-syntax-highlighting
     sudo
     colored-man-pages
     fzf
     history-substring-search
     z
     zsh-autosuggestions
-    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+ZSH_HIGHLIGHT_STYLES[command]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#a9d07c,bold'
+ZSH_HIGHLIGHT_STYLES[default]='fg=#bdbfcb'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#f47571,bold'  # use your preferred color
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -137,14 +147,19 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cfg="cd $HOME/.config/hypr"
+alias hyprcfg="nvim $HOME/.config/hypr"
 alias what="cd $HOME/coding/what && nvim what.txt"
+alias nvimcfg="nvim $HOME/.config/nvim/lua"
+alias waybarcfg="nvim %HOME/.config/waybar/"
+alias snake="$HOME/coding/projects/snake/build/snake"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # enable vi bindings
 bindkey -v
+autoload -Uz add-zle-hook-widget
+add-zle-hook-widget line-init vi-cmd-mode
 bindkey '^ ' forward-word
 bindkey '^e' end-of-line
 
