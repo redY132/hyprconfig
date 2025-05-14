@@ -35,7 +35,7 @@
 
         "format": "<sub>{icon}</sub>{windows}",
         "format-window-seperator": " ",
-        "window-rewrite-default": "",
+        "window-rewrite-default": " ",
         "format-icons": {
             "empty": "",
             "urgent": "",
@@ -45,8 +45,8 @@
         },
         "window-rewrite": {
             "class<zen>": "\u2660",
-            "class<zen> title<.*youtube.*>": "",
-            "code": "\uf121",
+            "class<zen> title<.*youtube.*>": " ",
+            "code": "\uf121 ",
             "class<kitty>": "\uf121 "
         }
     },
