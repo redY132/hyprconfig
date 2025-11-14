@@ -2720,3 +2720,9 @@ bold_italic_font auto
 # END_KITTY_FONTS
 
 window_margin_width 10
+
+
+# BEGIN_KITTY_THEME
+# Yorumi Shade
+include current-theme.conf
+# END_KITTY_THEME

@@ -5,6 +5,7 @@ dunst
 hyprshot
 oh-my-zsh (and plugins)
 linux-g14 and linux-g14-headers
-rog-control-center
 asusctl
 supergfxctl
+borders-plus-plus
+hyprpanel
